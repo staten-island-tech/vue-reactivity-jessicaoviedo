@@ -16,7 +16,7 @@ export default {
   name: "Card",
   props: {
     title: String,
-    price: Number,
+    watchtime: String,
     released: String,
     description: String,
     image: String,
@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .card {
   background-color: #954348;
   margin: 10px auto;
@@ -38,7 +38,6 @@ export default {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  width: 80vw;
 }
 
 img {

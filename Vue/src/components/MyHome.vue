@@ -5,6 +5,7 @@
     alt="marvel logo"
   />
   <h1>make a marvel watch list here!</h1>
+  <h2>view your watchlist here:</h2>
   <div class="home">
     <Card
       v-for="movie in movies"
@@ -42,7 +43,7 @@ export default {
         },
         {
           title: "The Incredible Hulk",
-          price: 20.0,
+          watchtime: "2h 1m",
           released: "June 13th, 2008",
           description:
             "Scientist Bruce Banner (Edward Norton) desperately seeks a cure for the gamma radiation that contaminated his cells and turned him into The Hulk. Cut off from his true love Betty Ross (Liv Tyler) and forced to hide from his nemesis, Gen. Thunderbolt Ross (William Hurt), Banner soon comes face-to-face with a new threat: a supremely powerful enemy known as The Abomination (Tim Roth).",
@@ -293,9 +294,12 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 h1 {
   color: #364e6f;
+}
+h2 {
+  color: #002137;
 }
 .topHeader {
   width: 70%;
