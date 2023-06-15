@@ -1,31 +1,48 @@
+<script setup>
+import { cart } from "./SideCart.js";
+import { total } from "./SideCart.js";
+</script>
+
 <template>
   <section class="cardsContainer">
     <div class="card">
       <h2>{{ title }}</h2>
-      <h3>{{ watchtime }}</h3>
+      <h3>${{ price }}.00</h3>
       <h4>Released {{ released }}</h4>
-      <img :src="image" alt="" />
+      <img :src="image" alt="Movie Poster" />
       <p class="description">{{ description }}</p>
-      <button class="cartButton">Add to watchlist</button>
+      <button @click="addit" id="buy" class="cartButton">Add to cart</button>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "Card",
+  name: "InfoCards",
   props: {
     title: String,
-<<<<<<< HEAD
-    watchtime: Number,
-=======
-    watchtime: String,
->>>>>>> 593034199f93f5a8c32e81c3b5f9d97112f559ac
+    price: Number,
     released: String,
     description: String,
     image: String,
-    button: String,
   },
+
+  methods: {
+    addit: function () {
+      cart.push({
+        name: this.title,
+        cost: this.price,
+        photo: this.image,
+      });
+      total.value = total.value;
+    },
+  },
+  components: {},
+  computed: {
+    image: function () {
+      return this.image;
+    },
+  }, 
 };
 </script>
 
@@ -41,7 +58,7 @@ export default {
 .home {
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 img {
