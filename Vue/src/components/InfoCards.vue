@@ -16,7 +16,7 @@ export default {
   name: "Card",
   props: {
     title: String,
-    price: Number,
+    watchtime: Number,
     released: String,
     description: String,
     image: String,
